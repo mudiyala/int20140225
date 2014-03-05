@@ -13,13 +13,31 @@
     return 1;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IntCustomTableCell"];
+    
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IntCustomTableCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+
     return cell;
+    
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+
+    return 100;
+
+}
+
 
 @end

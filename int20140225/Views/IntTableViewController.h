@@ -5,6 +5,5 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface IntTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 @end
